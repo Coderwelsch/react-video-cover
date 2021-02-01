@@ -367,7 +367,7 @@ function (_Component) {
       return external_react_default.a.createElement("video", lib_extends({
         className: this.props.className,
         style: style
-      }, this.props.videoOptions));
+      }, this.props.videoOptions), this.props.children);
     }
   }]);
 
@@ -426,7 +426,12 @@ lib_VideoCover.propTypes = {
   /**
    * Use this to set a custom className.
    */
-  className: external_prop_types_default.a.string
+  className: external_prop_types_default.a.string,
+
+  /**
+   * Use this for <source/> definitions
+   */
+  children: external_prop_types_default.a.oneOfType([external_prop_types_default.a.arrayOf(external_prop_types_default.a.node), external_prop_types_default.a.node]).isRequired
 };
 lib_VideoCover.defaultProps = {
   forceFallback: false,
